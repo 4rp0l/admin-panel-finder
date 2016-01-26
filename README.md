@@ -2,11 +2,11 @@
 
 ---
 
-+A Black Hat Tool for blackbox testing control panel existance of any website .
++ A Black Hat Tool for blackbox testing control panel existance of any website .
 
-+It has highly optimized multiprocessing option . 
++ It has highly optimized multiprocessing option . 
 
-+It checks common directories/files for finding admin panel. 
++ It checks common directories/files for finding admin panel. 
 
 ---
 
