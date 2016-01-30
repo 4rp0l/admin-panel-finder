@@ -1,18 +1,13 @@
 #!/usr/bin/env python
 
 banner = ''' SMART ADMIN PANEL FINDER
-_______      ___________  ___________
-|      \\    |          | |          |
-|       \\   |          | |          |
-|    |   \\  |    ______| |   _______|
-|         | |          | |          |
-|  _______| |          | |          |
-|         | |          | |          |
-|         | |______    | |   _______|
-|    |   /  |          | |          |
-|       /   |          | |          |
-|______/    |__________| |__________|
 
+  ___      _           _      ______                _______ _           _           
+ / _ \    | |         (_)     | ___ \              | |  ___(_)         | |          
+/ /_\ \ __| |_ __ ___  _ _ __ | |_/ /_ _ _ __   ___| | |_   _ _ __   __| | ___ _ __ 
+|  _  |/ _` | '_ ` _ \| | '_ \|  __/ _` | '_ \ / _ \ |  _| | | '_ \ / _` |/ _ \ '__|
+| | | | (_| | | | | | | | | | | | | (_| | | | |  __/ | |   | | | | | (_| |  __/ |   
+\_| |_/\__,_|_| |_| |_|_|_| |_\_|  \__,_|_| |_|\___|_\_|   |_|_| |_|\__,_|\___|_|
 '''
 team    = '--==++||Bangladesh Security ExploiterZ||++==--'
 group   = '          fb.com/groups/..............'
@@ -130,43 +125,50 @@ class URLMaker:
 
 
 def Request(site):
-	try:
-		r = requests.get(site , timeout = 10)
-		print site + '>> ' + r.status_code
+
+	try :
+		r = requests.get(site)
 		if r.status_code != 404:
+			print site
 			return site
 	except:
 		pass
-		print '[!] Check your internet connection'
 
 def main():
+
+	parser = argparse.ArgumentParser(description = ' Smart Admin Panel Finder || Bangladesh Security ExploiterZ' ,
+		epilog = 'Contact: www.facebook.com/tonmoyahmed.dhrubo')
+
+	parser.add_argument('-u', '--url',    help ='target url' ,      required = True )
+	parser.add_argument('-s', '--script', help ='script extension', required = False,   default = 'php' )
+	parser.add_argument('-f', '--file',   help ='wordlist file',    required = False,   default = 'path.txt')
+	parser.add_argument('-t', '--thread', help ='how many threads', required = False,   default = 10   , type = int)
+
+	arguments = parser.parse_args()
+
 	screen_clear()
 	Banner()
 	print '\n' * 1
-	target    = raw_input('Type your target    >')
-	filename  = raw_input('Filename of paths   >')
-	threads   = raw_input('How many threads?   >')
-	ext       = raw_input('Script used in site >')
-	if not filename:     # Defining default file containing pathlist
-		filename = 'path.txt'
-	if not threads:      # Defining default number of threads (actually processes)
-		threads = 10
-	if not ext:          # Defining default extension of language used in the site
-		ext = 'php'
-	raw_input('Hit ENTER if you want to proceed .....')
-	threads = int(threads)
+
+	target   = arguments.url
+	filename = arguments.file
+	threads  = arguments.thread
+	ext      = arguments.script
+
 	urls = URLMaker(domain = target, path = filename)  # Using URLMaker class to make urls from domain and pathlist
 	urls = urls.Join()
 	f_urls =[ i.replace('\x25EXT\x25',ext) for i in urls] # Replaceing %EXT% with provided extension
 	pool = MP.Pool(threads)   # Instantiated a pool class from multiprocessing module for process number
 	found= pool.map(Request, f_urls)   # Getting lists of results from pool class 
-	print ''
-	print '[+] Found  %s ' % len(found)
-	print ''
+	
+	panel = []
 	for each in found:
-		print each
-	for each in f_urls:
-		print each
+		if each:
+			print each
+			panel.append(each)
+	print ''
+	print '[+] Found  %s ' % len(panel)
+	print ''
 
 if __name__ == '__main__':
 	main()
