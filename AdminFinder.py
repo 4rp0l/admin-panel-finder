@@ -1,14 +1,22 @@
 #!/usr/bin/env python
 
 banner = '''    _       _           _       ____                  _ _____ _           _           
-   / \   __| |_ __ ___ (_)_ __ |  _ \ __ _ _ __   ___| |  ___(_)_ __   __| | ___ _ __ 
-  / _ \ / _` | '_ ` _ \| | '_ \| |_) / _` | '_ \ / _ \ | |_  | | '_ \ / _` |/ _ \ '__|
- / ___ \ (_| | | | | | | | | | |  __/ (_| | | | |  __/ |  _| | | | | | (_| |  __/ |   
-/_/   \_\__,_|_| |_| |_|_|_| |_|_|   \__,_|_| |_|\___|_|_|   |_|_| |_|\__,_|\___|_|'''
-team    = '--==++||Bangladesh Security ExploiterZ||++==--'
-group   = '          fb.com/groups/..............'
-dev     = '--==++|| Coded By Tonmoy Ahmed Dhrubo ||++==--' 
-contact = '    Contact :: fb.com/tonmoyahmed.dhrubo'
+  @@@@@@   @@@@@@@      @@@@@@@@  @@@  @@@  @@@  @@@@@@@   @@@@@@@@  @@@@@@@   
+ @@@@@@@@  @@@@@@@@     @@@@@@@@  @@@  @@@@ @@@  @@@@@@@@  @@@@@@@@  @@@@@@@@  
+ @@!  @@@  @@!  @@@     @@!       @@!  @@!@!@@@  @@!  @@@  @@!       @@!  @@@  
+ !@!  @!@  !@!  @!@     !@!       !@!  !@!!@!@!  !@!  @!@  !@!       !@!  @!@  
+ @!@!@!@!  @!@@!@!      @!!!:!    !!@  @!@ !!@!  @!@  !@!  @!!!:!    @!@!!@!   
+ !!!@!!!!  !!@!!!       !!!!!:    !!!  !@!  !!!  !@!  !!!  !!!!!:    !!@!@!    
+ !!:  !!!  !!:          !!:       !!:  !!:  !!!  !!:  !!!  !!:       !!: :!!   
+ :!:  !:!  :!:          :!:       :!:  :!:  !:!  :!:  !:!  :!:       :!:  !:!  
+ ::   :::   ::           ::        ::   ::   ::   :::: ::   :: ::::  ::   :::  
+  :   : :   :            :        :    ::    :   :: :  :   : :: ::    :   : :  
+   
+'''
+team    = ' 	  --==++||Bangladesh Security ExploiterZ||++==--'
+group   = '	      	      fb.com/groups/..............'
+dev     = '	   --==++|| Coded By Tonmoy Ahmed Dhrubo ||++==--' 
+contact = '	       Contact :: fb.com/tonmoyahmed.dhrubo'
 
 import requests
 import multiprocessing as MP
@@ -138,7 +146,7 @@ def main():
 	parser.add_argument('-u', '--url',    help ='target url' ,      required = True )
 	parser.add_argument('-s', '--script', help ='script extension', required = False,   default = 'php' )
 	parser.add_argument('-f', '--file',   help ='wordlist file',    required = False,   default = 'path.txt')
-	parser.add_argument('-t', '--thread', help ='how many threads', required = False,   default = 10   , type = int)
+	parser.add_argument('-t', '--thread', help ='how many threads', required = False,   default = 4   , type = int)
 
 	arguments = parser.parse_args()
 
