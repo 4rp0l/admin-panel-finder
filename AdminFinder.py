@@ -132,7 +132,7 @@ def Request(site):
 
 	try :
 		r = requests.get(site)
-		if r.status_code != 404 or r.status_code != 500:
+		if r.status_code != 404:
 			print site
 			return site
 	except:

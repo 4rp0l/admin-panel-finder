@@ -471,7 +471,6 @@ isadmin.%EXT%
 paneladministracion
 adminlogin.%EXT%
 checkuser.%EXT%
-processlogin.%EXT%
 administracion/ingresar.%EXT%
 autologin.%EXT%
 admin2.%EXT%
