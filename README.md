@@ -13,13 +13,13 @@
 ###Commands
 
 [ Mandatory ]
-+ AdminFinder.py -u http://localhost
++ python AdminFinder.py -u http://localhost
 
 [   Optional   ]
-+ AdminFinder.py -u http://localhost --help  [help]
-+ AdminFinder.py -u http://localhost --script aspx  [script name . Default : php]
-+ AdminFinder.py -u http://localhost --thread 10   [Parallel Processes . Default : 4]
-+ AdminFinder.py -u http://localhost --file path.txt   [File containing path names . Default : path.txt]
++ python AdminFinder.py -u http://localhost --help  [help]
++ python AdminFinder.py -u http://localhost --script aspx  [script name . Default : php]
++ python AdminFinder.py -u http://localhost --thread 10   [Parallel Processes . Default : 4]
++ python AdminFinder.py -u http://localhost --file path.txt   [File containing path names . Default : path.txt]
 
 ---
 
